@@ -66,3 +66,7 @@ function fishBtnClicked() {
     }
   }
 }
+
+function  setfishCount( ){
+
+}
