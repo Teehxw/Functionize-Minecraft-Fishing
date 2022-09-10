@@ -8,15 +8,42 @@ let numCodSpan = document.getElementById('num-cod');
 let numSalmonSpan = document.getElementById('num-salmon');
 let numTropicalSpan = document.getElementById('num-tropical');
 let numPufferSpan = document.getElementById('num-puffer');
+let steveBorder = document.getElementById("steve");
+let alexBorder = document.getElementById("alex");
+let villagerBorder = document.getElementById("villager");
+
 
 // Global Variables
 let numCod = 0;
 let numSalmon = 0;
 let numTropical = 0;
 let numPuffer = 0;
+let character = "Steve";
 
 // Add Event Listener to Calculate Button
 fishBtn.addEventListener('click', fishBtnClicked);
+
+//Highlight character border for what is chosen
+function selectSteve(){
+  steveBorder.classList.add("character-img active");
+  alexBorder.classList.remove("character-img active");
+  villagerBorder.classList.remove("character-img active");
+  character = "Steve";
+}
+
+function selectAlex(){
+  alexBorder.classList.add("active");
+  steveBorder.classList.remove("active");
+  villagerBorder.classList.remove("active");
+  character = "Alex";
+}
+
+function selectVillager (){
+  villagerBorder.classList.add("active");
+  alexBorder.classList.remove("active");
+  steveBorder.classList.remove("active");
+  character = "Villager";
+}
 
 // Event handler for fishBtn
 function fishBtnClicked() {
@@ -26,6 +53,8 @@ function fishBtnClicked() {
   // Catch fish based on character
   if (character === 'steve') {
     // STEVE: Cod 70%, Salmon 20%, Tropical 5%, Puffer 5%
+
+    
 
     catchFish("0.7", "0.9", "0.95");
     
@@ -63,6 +92,10 @@ function catchFish( num1, num2, num3){
     numPufferSpan.innerHTML = numPuffer;
     resultImg.src = 'img/Pufferfish.png';
     }
+
+}
+
+function updateBorder (){
 
 }
 
